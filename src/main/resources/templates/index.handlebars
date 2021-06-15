@@ -9,13 +9,14 @@
 </head>
 <body>
 <form action="/" method="post">
-<!--    <input type="submit">-->
-    {{#each count}}-->
-        <li>{{this}}</li>
+    <!--    <input type="submit">-->
+    {{#each user}}-->
+        <li>{{this}} has been greeted {{#each count }} {{this}} {{/each}} times</li>
     {{/each}}
+
 </form>
 <form action="/hello" method="get">
-    <input type="submit" value="Next" >
+    <input type="submit" value="Next">
 </form>
 </body>
 </html>

@@ -33,9 +33,8 @@ public class App {
                 map.put("count", msg);
 
             }
+            System.out.println(map);
             return new ModelAndView(map, "index.handlebars");
-//            System.out.println(map);
-
         }, new HandlebarsTemplateEngine());
 
 
