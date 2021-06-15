@@ -5,24 +5,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bread</title>
+    <title>Document</title>
 </head>
 <body>
-<h1>Greet me</h1>
-<form action="/" method="get">
-   <input type="submit" Home>
-
+<form action="/" method="post">
+    <input type="submit">
+    <p>banana</p>
+    {{#each count}}-->
+        <li>{{this}}</li>
+    {{/each}}
 </form>
-<form action="/hello" method="post" >
-    <input type="text" name="username">
-    <input type="submit" >
-</form>
-<div>
-    <ul>
-        {{greeting}}
-
-    </ul>
-</div>
-
 </body>
 </html>
