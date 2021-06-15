@@ -9,11 +9,13 @@
 </head>
 <body>
 <form action="/" method="post">
-    <input type="submit">
-    <p>banana</p>
+<!--    <input type="submit">-->
     {{#each count}}-->
         <li>{{this}}</li>
     {{/each}}
+</form>
+<form action="/hello" method="get">
+    <input type="submit" value="Next" >
 </form>
 </body>
 </html>

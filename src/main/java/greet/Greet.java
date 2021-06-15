@@ -15,20 +15,19 @@ public class Greet {
     public void bread() {
 
 
-
-
     }
 
-    public String selectLanguage(int userInput, String user) {
+
+    public String languageSelection(String userInput, String user) {
         String msg = "";
         switch (userInput) {
-            case 1:
+            case "Eng":
                 msg = "Hello " + user;
                 break;
-            case 2:
+            case "Span":
                 msg = "Olá " + user;
                 break;
-            case 3:
+            case "Jap":
                 msg = "こんにちは " + user;
                 break;
 
@@ -54,13 +53,14 @@ public class Greet {
         return usersGreeted.get(lowerName);
     }
 
-    public void greet(String name, int language) {
+    public void greet(String name) {
 
         String lowerName = name.toLowerCase();
+
         if (!usersGreeted.containsKey(lowerName)) {
             iCount = 1;
             usersGreeted.put(lowerName, iCount);
-        } else if (usersGreeted.containsKey(lowerName) && language <= 3) {
+        } else if (usersGreeted.containsKey(lowerName)) {
 
             for (int i = 0; i < usersGreeted.size(); i++) {
 
@@ -70,5 +70,8 @@ public class Greet {
             }
 
         }
+        // insert if statement for if the language and username is blank
+
+
     }
 }

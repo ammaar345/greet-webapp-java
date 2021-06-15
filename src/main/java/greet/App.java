@@ -34,7 +34,11 @@ public class App {
 
             }
             return new ModelAndView(map, "index.handlebars");
+//            System.out.println(map);
+
         }, new HandlebarsTemplateEngine());
+
+
         get("/hello", (req, res) -> {
 
             Map<String, Object> map = new HashMap<>();
@@ -42,10 +46,15 @@ public class App {
 
         }, new HandlebarsTemplateEngine());
         post("/hello", (req, res) -> {
+            Greet greet = new Greet();
             Map<String, Object> map = new HashMap<>();
+            String language = req.queryParams("language");
+            String name = req.queryParams("username");
+            greet.greet(name);
 
             // create the greeting message
-            String greeting = "Hello, " + req.queryParams("username");
+
+            String greeting = greet.languageSelection(language, name);
 
             // put it in the map which is passed to the template - the value will be merged into the template
             map.put("greeting", greeting);

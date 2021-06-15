@@ -9,15 +9,15 @@
 </head>
 <body>
 <h1>Greet me</h1>
-<form action="/" method="get">
+<form action="/" method="post">
     <input type="submit" value="Home">
 
 </form>
 <form action="/hello" method="post">
     <input type="text" name="username">
-    <input type="radio" value="1" name="English"> English
-    <input type="radio" value="2"> Japanese
-    <input type="radio" value="3"> Spanish
+    <input type="radio" value="Eng" name="language" checked> English
+    <input type="radio" value="Jap" name="language"> Japanese
+    <input type="radio" value="Span" name="language"> Spanish
     <input type="submit">
 </form>
 <div>
