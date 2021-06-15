@@ -19,7 +19,9 @@ public class App {
         get("/", (req, res) -> {
             Map<String, Object> users = new HashMap<>();
             return new ModelAndView(users, "index.handlebars");
-        });
+        }, new HandlebarsTemplateEngine());
+
+
         post("/", (req, res) -> {
             Greet greet = new Greet();
             ArrayList<Object> names = new ArrayList<>();
