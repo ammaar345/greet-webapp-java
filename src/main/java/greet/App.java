@@ -16,21 +16,22 @@ public class App {
 
     public static void main(String[] args) {
         staticFiles.location("/public");
+        Greet greet = new Greet();
         get("/", (req, res) -> {
+
             Map<String, Object> users = new HashMap<>();
+            users.put("user", greet.names);
             return new ModelAndView(users, "index.handlebars");
         }, new HandlebarsTemplateEngine());
 
 
         post("/", (req, res) -> {
-            Greet greet = new Greet();
-//            ArrayList<Object> names = new ArrayList<>();
+//            Greet greet = new Greet();
             Map<String, Object> map = new HashMap<>();
-
+            String list = " has been greeted.";
             map.put("user", greet.names);
             System.out.println(map);
-//            System.out.println(map);
-            return new ModelAndView(greet.userNames(), "index.handlebars");
+            return new ModelAndView(map, "index.handlebars");
         }, new HandlebarsTemplateEngine());
 
 
@@ -41,7 +42,7 @@ public class App {
 
         }, new HandlebarsTemplateEngine());
         post("/hello", (req, res) -> {
-            Greet greet = new Greet();
+//            Greet greet = new Greet();
             Map<String, Object> map = new HashMap<>();
             String language = req.queryParams("language");
             String name = req.queryParams("username");
