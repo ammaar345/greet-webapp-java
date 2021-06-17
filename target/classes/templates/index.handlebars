@@ -8,15 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/" method="post">
-    <!--    <input type="submit">-->
-    {{#each user}}-->
-        <li>{{this}} has been greeted {{#each count }} {{this}} {{/each}} times</li>
-    {{/each}}
+{{!-- <form action="/" method="post"> --}}
+{{!--     <!--    <input type="submit">--> --}}
 
-</form>
+
+{{!-- </form> --}}
 <form action="/hello" method="get">
     <input type="submit" value="Next">
+       {{#each user}}
+            <li>{{this}} has been greeted </li>
+        {{/each}}
 </form>
 </body>
 </html>

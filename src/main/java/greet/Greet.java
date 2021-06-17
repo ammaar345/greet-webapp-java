@@ -11,7 +11,7 @@ public class Greet {
     public Map<String, Integer> greetedUsers() {
         return usersGreeted;
     }
-
+    ArrayList names = new ArrayList();
     public void bread() {
 
 
@@ -35,6 +35,21 @@ public class Greet {
         return msg;
     }
 
+    public ArrayList userNames() {
+
+      for (int i = 0; i < greetedUsers().size(); i++) {
+//           names.add(usersGreeted.get(i));
+          names.add(greetedUsers().keySet().toArray()[i]);
+          String msg = (names.get(i) + " has been greeted " + greetedUsers().get(names.get(i)) + " time(s)");
+//           map.put("count", msg);
+
+        }
+//for (Map.Entry  entry:usersGreeted.entrySet()){
+//names.add(entry);
+//}
+
+        return names;
+    }
 //    public String greetUser(String username) {
 //        username = "";
 //        String msg = "";

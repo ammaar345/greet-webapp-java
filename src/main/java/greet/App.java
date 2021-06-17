@@ -24,17 +24,13 @@ public class App {
 
         post("/", (req, res) -> {
             Greet greet = new Greet();
-            ArrayList<Object> names = new ArrayList<>();
+//            ArrayList<Object> names = new ArrayList<>();
             Map<String, Object> map = new HashMap<>();
-            for (int i = 0; i < greet.greetedUsers().size(); i++) {
 
-                names.add(greet.greetedUsers().keySet().toArray()[i]);
-                String msg = (names.get(i) + " has been greeted " + greet.greetedUsers().get(names.get(i)) + " time(s)");
-                map.put("count", msg);
-
-            }
+            map.put("user", greet.names);
             System.out.println(map);
-            return new ModelAndView(map, "index.handlebars");
+//            System.out.println(map);
+            return new ModelAndView(greet.userNames(), "index.handlebars");
         }, new HandlebarsTemplateEngine());
 
 
