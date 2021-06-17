@@ -13,11 +13,15 @@
 
 
 {{!-- </form> --}}
+<a href="/greeted">
+    <button>Greeted names</button>
+</a>
+
 <form action="/hello" method="get">
     <input type="submit" value="Next">
-       {{#each user}}
-            <li>{{this}} has been greeted </li>
-        {{/each}}
+    {{#each user}}
+        <li>{{this}} has been greeted</li>
+    {{/each}}
 </form>
 </body>
 </html>

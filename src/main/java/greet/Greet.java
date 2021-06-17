@@ -7,14 +7,19 @@ import java.util.Map;
 public class Greet {
     private final HashMap<String, Integer> usersGreeted = new HashMap<>();
     private int iCount = 0;
-
+    ArrayList<String> names = new ArrayList();
     public Map<String, Integer> greetedUsers() {
+
         return usersGreeted;
     }
-    ArrayList names = new ArrayList();
-    public void bread() {
 
+    public ArrayList<Integer> eachUsersCount() {
+        ArrayList<Integer> countForEachUser = new ArrayList<>();
+        for (String user : usersGreeted.keySet()) {
+            countForEachUser.add(usersGreeted.get(user));
 
+        }
+        return countForEachUser;
     }
 
 
@@ -36,34 +41,25 @@ public class Greet {
     }
 
     public ArrayList userNames() {
+//        ArrayList<String> names = new ArrayList();
+        for (String user : usersGreeted.keySet()) {
+            names.add(user);
+            System.out.println(user);
+        }
 
-      for (int i = 0; i < greetedUsers().size(); i++) {
+        return names;
 //           names.add(usersGreeted.get(i));
-          names.add(greetedUsers().keySet().toArray()[i]);
-          String msg = (names.get(i) + " has been greeted " + greetedUsers().get(names.get(i)) + " time(s)");
+//          names.add(greetedUsers().keySet().toArray()[i]);
+//          String msg = (names.get(i) + " has been greeted " + greetedUsers().get(names.get(i)) + " time(s)");
 //           map.put("count", msg);
 
-        }
+    }
 //for (Map.Entry  entry:usersGreeted.entrySet()){
 //names.add(entry);
 //}
 
-        return names;
-    }
-//    public String greetUser(String username) {
-//        username = "";
-//        String msg = "";
-//        if (username.equals("")) {
-//            msg = "Hello !";
-//
-//        } else if (!username.equals("")) {
-//            msg = "Hello " + username;
-//        }
-//        return msg;
-//    }
 
-
-    public int greetedUser(String userName) {
+    public int greetedUserCount(String userName) {
         String lowerName = userName.toLowerCase();
         return usersGreeted.get(lowerName);
     }

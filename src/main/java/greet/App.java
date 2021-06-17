@@ -17,21 +17,22 @@ public class App {
     public static void main(String[] args) {
         staticFiles.location("/public");
         Greet greet = new Greet();
-        get("/", (req, res) -> {
+//        get("/greeted", (req, res) -> {
+//
+//            Map<String, Object> users = new HashMap<>();
+//            users.put("user", greet.names);
+//            return new ModelAndView(users, "greeted.handlebars");
+//        }, new HandlebarsTemplateEngine());
 
-            Map<String, Object> users = new HashMap<>();
-            users.put("user", greet.names);
-            return new ModelAndView(users, "index.handlebars");
-        }, new HandlebarsTemplateEngine());
 
-
-        post("/", (req, res) -> {
+        get("/greeted", (req, res) -> {
 //            Greet greet = new Greet();
             Map<String, Object> map = new HashMap<>();
             String list = " has been greeted.";
-            map.put("user", greet.names);
-            System.out.println(map);
-            return new ModelAndView(map, "index.handlebars");
+
+            map.put("user", greet.userNames());
+            greet.greetedUsers();
+            return new ModelAndView(map, "greeted.handlebars");
         }, new HandlebarsTemplateEngine());
 
 
@@ -44,17 +45,18 @@ public class App {
         post("/hello", (req, res) -> {
 //            Greet greet = new Greet();
             Map<String, Object> map = new HashMap<>();
+
+
             String language = req.queryParams("language");
             String name = req.queryParams("username");
             greet.greet(name);
-
+            greet.greetedUsers();
             // create the greeting message
 
             String greeting = greet.languageSelection(language, name);
-
             // put it in the map which is passed to the template - the value will be merged into the template
             map.put("greeting", greeting);
-//            System.out.println(map);
+
             return new ModelAndView(map, "hello.handlebars");
 
         }, new HandlebarsTemplateEngine());
@@ -72,13 +74,5 @@ public class App {
 //
 
 //        );
-
-//        get("/home", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            return new VelocityTemplateEngine().render(
-//                    new ModelAndView(model, "/index")
-//);
-//        });
-
     }
 }
