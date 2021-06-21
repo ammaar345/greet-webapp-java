@@ -8,6 +8,7 @@ public class Greet {
     private final HashMap<String, Integer> usersGreeted = new HashMap<>();
     private int iCount = 0;
     ArrayList<String> names = new ArrayList();
+
     public Map<String, Integer> greetedUsers() {
 
         return usersGreeted;
@@ -22,6 +23,9 @@ public class Greet {
         return countForEachUser;
     }
 
+    public int userCount() {
+        return usersGreeted.size();
+    }
 
     public String languageSelection(String userInput, String user) {
         String msg = "";
@@ -68,7 +72,7 @@ public class Greet {
 
         String lowerName = name.toLowerCase();
 
-        if (!usersGreeted.containsKey(lowerName)) {
+        if (!usersGreeted.containsKey(lowerName) && lowerName != "") {
             iCount = 1;
             usersGreeted.put(lowerName, iCount);
         } else if (usersGreeted.containsKey(lowerName)) {
@@ -82,6 +86,13 @@ public class Greet {
 
         }
         // insert if statement for if the language and username is blank
+
+
+    }
+    public void checkExist(String user){
+        if(!usersGreeted.containsKey(user)){
+
+        }
 
 
     }

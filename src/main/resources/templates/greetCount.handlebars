@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/bootstrap-grid.css">
 
@@ -29,13 +30,14 @@
 
 </head>
 <body class="container bg-primary">
-
-<button type="submit" class="btn btn-dark"><a href="/hello" style="text-decoration:none">Greet more</a></button>
-
-{{#each user}}
-    <li style="text-decoration:none"><p><a href="/hello/{{this}}" style="color:black">{{this}} </a>has been greeted. </p></li>
-{{/each}}
+<form action="/hello/:username" method="get">
+    {{msg}}
 
 
+
+</form>
+<a href="/hello">
+<button class="btn btn-dark">Back</button>
+</a>
 </body>
 </html>

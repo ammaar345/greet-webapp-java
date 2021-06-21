@@ -6,27 +6,57 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bread</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-grid.css.map">
+
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-4.5.2-dist/css/bootstrap-grid.min.css.maps">
+
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-reboot.css.map">
+
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css.map">
+    <link rel="stylesheet" href="/css/bootstrap.css.map">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css.map ">
+
 </head>
-<body>
+<body class="container bg-primary">
 <h1>Greet me</h1>
-<form action="/" method="post">
-    <input type="submit" value="Home">
-   {{#each user}}
-        <li>{{this}} </li>
-    {{/each}}
-</form>
+
 <form action="/hello" method="post">
     <input type="text" name="username">
     <input type="radio" value="Eng" name="language" checked> English
     <input type="radio" value="Jap" name="language"> Japanese
     <input type="radio" value="Span" name="language"> Spanish
-    <input type="submit">
+    <input type="submit" VALUE="Greet" class="btn btn-secondary">
+
+</form>
+<form action="/hello" method="get">
+    <p>{{count}}</p>
+</form>
+<form action="/greeted" method="get">
+    <div class="row">
+        <div class="col-sm"><input type="submit" value="Greeted users" class="btn btn-dark">
+        </div>
+    </div>
+    {{#each user}}
+        <li>{{this}} </li>
+    {{/each}}
 </form>
 <div>
     <ul>
         {{greeting}}
 
     </ul>
+
 </div>
 
 </body>

@@ -28,14 +28,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css.map ">
 
 </head>
-<body class="container bg-primary">
-
-<button type="submit" class="btn btn-dark"><a href="/hello" style="text-decoration:none">Greet more</a></button>
-
-{{#each user}}
-    <li style="text-decoration:none"><p><a href="/hello/{{this}}" style="color:black">{{this}} </a>has been greeted. </p></li>
-{{/each}}
-
-
+<body>
+<form action="/countAll" method="get"></form>
 </body>
 </html>
